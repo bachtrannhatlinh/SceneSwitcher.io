@@ -1,0 +1,35 @@
+.processing-page {
+  background-color: #f5f5f5;
+
+  /* Header styles */
+  .header {
+    padding: 10px 40px;
+    background: #191919;
+    
+    .profile {
+      span {
+        border-right: solid 1px #FFFFFFB2;
+        color: #FFFFFF;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17.07px;
+      }
+    }
+  }
+
+  /* Button Cancel styles */
+  .btn-outline-danger {
+    border: 2px solid red;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+  }
+
+  /* H4 styling */
+  h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}

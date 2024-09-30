@@ -1,0 +1,64 @@
+.login {
+  h2 {
+    color: #000;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .emall_address {
+    .label {
+      color: #000;
+      font-family: 'Poppins';
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 26.1px;
+    }
+  }
+
+  .password {
+    .label {
+      color: #000;
+      font-family: 'Poppins';
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 26.1px;
+    }
+
+    .eye {
+      position: relative;
+      img {
+        position: absolute;
+        right: 10px;
+        top: 20%;
+      }
+    }
+  }
+
+  .forgot_password {
+    a {
+      color: #022C22 !important;
+      font-family: 'Poppins';
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20.3px;
+      text-decoration: none;
+    }
+  }
+
+  button {
+    background-color: #022C22;
+  }
+
+  .sign_in{
+    span {
+      color: #BEF264;
+      font-family: 'Poppins';
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+}
