@@ -1,0 +1,73 @@
+.layout-time-line-status {
+  width: 855.75px;
+
+  .timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+    .timeline-line {
+      position: absolute;
+      top: 50%;
+      left: 34px;
+      right: -15px;
+      height: 5px;
+      background-color: #a4eb34;
+      z-index: 0;
+    }
+
+    .timeline-step {
+      position: relative;
+      z-index: 1;
+      height: 100px;
+      text-align: center;
+
+      .label {
+        position: absolute;
+        top: 0;
+      }
+
+      .circle {
+        width: 20px;
+        height: 20px;
+        background-color: #a4eb34;
+        border-radius: 50%;
+        position: absolute;
+        top: 43%;
+        left: 15px;
+      }
+
+      span {
+        display: block;
+        font-size: 14px;
+        color: #333;
+        margin-top: 10px;
+      }
+    }
+
+    // Increase specificity for the second timeline-step's label
+    .timeline-step:nth-child(3),
+    .timeline-step:nth-child(4){
+      .label {
+        width: 150px;
+        left: -45px;
+      }
+    }
+
+    .timeline-step:nth-child(5) {
+      .label {
+        width: 190px;
+        left: -45px;
+      }
+    }
+
+    .timeline-step:nth-child(6) {
+      .label {
+        width: 150px;
+        left: -50px;
+      }
+    }
+  }
+}
