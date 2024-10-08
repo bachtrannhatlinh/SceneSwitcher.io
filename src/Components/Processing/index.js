@@ -1,45 +1,47 @@
-import React from 'react';
-import { Container, Button, Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import { useStatusContext } from '../../context/StatusContext';
+import logoModal from '../../images/logo_modal.png';
+import './styled.scss';
 
-import logoModal from '../../images/logo_modal.png'
+const ProcessingModal = (props) => {
+  const { status, show, onHide } = props;
+  const { updateStatus } = useStatusContext();
 
-import './styled.scss'
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      updateStatus({ status: status });
+    }, 2000);
+  
+    return () => clearTimeout(timeoutId);
+  }, [status, updateStatus]);
 
-const Processing = () => {
-  const navigate = useNavigate();
-
-  const directLoginPage = () => {
-    navigate('/login');
-  }
+  const handleUpdateStatus = () => {
+    onHide(false);
+  };
 
   return (
-<div>
-  <Container
-    className="d-flex justify-content-center align-items-center flex-grow-1"
-    style={{ height: '50vh' }} // Đặt chiều cao cho Container
-  >
-    <Card
-      className="shadow p-4 text-left"
-      style={{ borderRadius: '10px', maxWidth: '595px' }}
+    <Modal
+      show={show}
+      onHide={onHide}
+      centered
+      backdrop="static"
+      keyboard={false}
     >
-      <img
-        src={logoModal}
-        alt="VSLOptimiser.io"
-        className="d-block mx-auto"
-        style={{ maxWidth: '50%', maxHeight: '100%' }}
-      />
-
-      <h4 className="mt-5">Processing Videos.</h4>
-
-      <Button variant="outline-danger" className="mt-5 w-100" onClick={directLoginPage}>
-        Cancel
-      </Button>
-    </Card>
-  </Container>
-</div>
-
+      <Modal.Body className="text-center">
+        <img
+          src={logoModal}
+          alt="VSLOptimiser.io"
+          className="d-block mx-auto"
+          style={{ maxWidth: '50%', maxHeight: '100%' }}
+        />
+        <h4 className="mt-4">Processing Videos.</h4>
+        <Button variant="outline-danger" className="mt-4 w-100" onClick={handleUpdateStatus}>
+          Cancel
+        </Button>
+      </Modal.Body>
+    </Modal>
   );
 };
 
-export default Processing;
+export default ProcessingModal;

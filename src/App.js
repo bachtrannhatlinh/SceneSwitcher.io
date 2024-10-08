@@ -6,6 +6,8 @@ import Products from './Pages/Products';
 
 import Processing from './Components/Processing'
 import VideoUploadForm from './Components/VideoUploadForm'
+import UploadNewScene from './Components/UploadNewScene'
+import VideoPreview from './Components/PreviewVideo'
 import VideoUploadFormClone from './Components/VideoUploadFormClone'
 
 import './App.css';
@@ -17,10 +19,12 @@ function App() {
     switch (stateStatus.status) {
       case 'upload':
         return <VideoUploadForm />
-      case 'scene_change':
-        return <VideoUploadFormClone />
+      case 'upload_new_scene':
+        return <UploadNewScene />
+      case 'preview_video':
+        return <VideoPreview />
       case 'voice_over_change':
-        return { status: 'voice_over_change' }
+        return <VideoUploadFormClone />
       case 'background_music_change':
         return { status: 'background_music_change' }
       case 'download':

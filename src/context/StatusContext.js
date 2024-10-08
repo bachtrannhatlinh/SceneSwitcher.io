@@ -6,8 +6,10 @@ function stateReducer(state, action) {
   switch (action.status) {
     case 'upload':
       return {status: 'upload'}
-    case 'scene_change':
-      return {status: 'scene_change'}
+    case 'upload_new_scene':
+      return {status: 'upload_new_scene'}
+    case 'preview_video':
+      return {status: 'preview_video'}
     case 'voice_over_change':
       return {status: 'voice_over_change'}
     case 'background_music_change':
