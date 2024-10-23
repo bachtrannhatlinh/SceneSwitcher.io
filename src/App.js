@@ -8,7 +8,9 @@ import Processing from './Components/Processing'
 import VideoUploadForm from './Components/VideoUploadForm'
 import UploadNewScene from './Components/UploadNewScene'
 import VideoPreview from './Components/PreviewVideo'
-import VideoUploadFormClone from './Components/VideoUploadFormClone'
+import VoiceOverChange from './Components/VoiceOverChange'
+import BackgroundMusicChange from './Components/BackgroundMusicChange'
+import DownloadVideo from './Components/DownloadVideo'
 
 import './App.css';
 
@@ -24,11 +26,11 @@ function App() {
       case 'preview_video':
         return <VideoPreview />
       case 'voice_over_change':
-        return <VideoUploadFormClone />
+        return <VoiceOverChange />
       case 'background_music_change':
-        return { status: 'background_music_change' }
-      case 'download':
-        return { status: 'download' }
+        return <BackgroundMusicChange />
+      case 'download_video':
+        return <DownloadVideo />
       default:
         return <Processing/>
     }

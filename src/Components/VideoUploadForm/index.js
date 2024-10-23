@@ -156,7 +156,12 @@ const VideoUploadForm = () => {
         </div>
       </Container>
       {
-        isOpenModalProcess && <Processing show={isOpenModalProcess} onHide={setOpenModalProcess} status={uploadNewScene} />
+        isOpenModalProcess && 
+        <Processing 
+          show={isOpenModalProcess} 
+          onHide={() => setOpenModalProcess(false)}
+          status={uploadNewScene} 
+        />
       }
     </>
   );

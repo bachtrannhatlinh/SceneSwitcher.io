@@ -50,7 +50,7 @@ const UploadNewScene = () => {
         isOpenModalProcess &&
         <Processing
           show={isOpenModalProcess}
-          onHide={setOpenModalProcess}
+          onHide={() => setOpenModalProcess(false)}
           status={statusPreviewVideo}
         />
       }

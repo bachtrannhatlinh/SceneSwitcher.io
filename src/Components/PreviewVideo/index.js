@@ -6,7 +6,7 @@ const VideoPreview = () => {
   const statusVoiceOverChange = 'voice_over_change'
   const [isOpenModalProcess, setOpenModalProcess] = useState(false)
 
-  const handleVoiceOverChange = () => {
+  const handleDirectVoiceOverChange = () => {
     setOpenModalProcess(true)
   }
 
@@ -32,7 +32,7 @@ const VideoPreview = () => {
             </div>
             <div className="d-flex justify-content-between">
               <button className="btn btn-outline-secondary">Skip</button>
-              <button className="btn btn-success" onClick={handleVoiceOverChange}>Process</button>
+              <button className="btn btn-success" onClick={handleDirectVoiceOverChange}>Process</button>
             </div>
           </div>
           <small className="text-muted mt-2">
@@ -44,7 +44,7 @@ const VideoPreview = () => {
         isOpenModalProcess &&
         <Processing
           show={isOpenModalProcess}
-          onHide={setOpenModalProcess}
+          onHide={() => setOpenModalProcess(false)}
           status={statusVoiceOverChange}
         />
       }

@@ -10,14 +10,14 @@ const ProcessingModal = (props) => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      updateStatus({ status: status });
-    }, 2000);
+      updateStatus({ status });
+    }, 1000);
   
     return () => clearTimeout(timeoutId);
   }, [status, updateStatus]);
 
   const handleUpdateStatus = () => {
-    onHide(false);
+    onHide(); 
   };
 
   return (
