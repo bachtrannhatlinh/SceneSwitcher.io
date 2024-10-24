@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Card, Form, InputGroup, FormControl } from 'react-bootstrap';
 
-import Processing from '../Processing';
+import ConfirmationModal from '../../Modal/Confirm'
 
 const VoiceOverChange = () => {
   const statusBackgroundMusicChange = 'background_music_change'
-  const [isOpenModalProcess, setOpenModalProcess] = useState(false)
+  const [isOpenModalConfirmation, setOpenModalConfirmation] = useState(false)
 
   const [fontSize, setFontSize] = useState(16);
   const [color, setColor] = useState('#000000');
@@ -22,7 +22,7 @@ const VoiceOverChange = () => {
 
   const handleDirectBackgroundMusicChange = (e) => {
     e.preventDefault(); 
-    setOpenModalProcess(true)
+    setOpenModalConfirmation(true)
   }
 
   return (
@@ -116,10 +116,10 @@ const VoiceOverChange = () => {
         </Card>
       </div>
       {
-        isOpenModalProcess &&
-        <Processing
-          show={isOpenModalProcess}
-          onHide={() => setOpenModalProcess(false)}
+        isOpenModalConfirmation &&
+        <ConfirmationModal
+          show={isOpenModalConfirmation}
+          onHide={() => setOpenModalConfirmation(false)}
           status={statusBackgroundMusicChange}
         />
       }

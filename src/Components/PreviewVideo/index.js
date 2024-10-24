@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Processing from '../Processing';
+import Processing from '../../Modal/Processing';
 
 const VideoPreview = () => {
   const statusVoiceOverChange = 'voice_over_change'

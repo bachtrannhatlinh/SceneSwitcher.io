@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 
-import Processing from '../Processing';
+import Processing from '../../Modal/Processing';
 
 const BackgroundMusicChange = () => {
   const statusDownloadVideo = 'download_video'

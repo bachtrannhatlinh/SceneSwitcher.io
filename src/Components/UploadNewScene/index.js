@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 
-import Processing from '../Processing';
+import Processing from '../../Modal/Processing';
 
 const UploadNewScene = () => {
   const statusPreviewVideo = 'preview_video'

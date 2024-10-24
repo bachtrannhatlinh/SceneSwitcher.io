@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 
-import Processing from '../Processing';
+import Processing from '../../Modal/Processing';
 
 const VideoUploadForm = () => {
   const uploadNewScene = 'upload_new_scene'

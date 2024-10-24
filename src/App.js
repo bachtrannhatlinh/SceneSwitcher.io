@@ -1,16 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useStatusContext } from './context/StatusContext'
+import { useStatusContext } from './context/StatusContext';
 
 import Login from './Pages/Login';
 import Products from './Pages/Products';
+import BillingPage from './Pages/Billing';  // Đổi tên import cho Billing
 
-import Processing from './Components/Processing'
-import VideoUploadForm from './Components/VideoUploadForm'
-import UploadNewScene from './Components/UploadNewScene'
-import VideoPreview from './Components/PreviewVideo'
-import VoiceOverChange from './Components/VoiceOverChange'
-import BackgroundMusicChange from './Components/BackgroundMusicChange'
-import DownloadVideo from './Components/DownloadVideo'
+import Processing from './Modal/Processing';
+import VideoUploadForm from './Components/VideoUploadForm';
+import UploadNewScene from './Components/UploadNewScene';
+import VideoPreview from './Components/PreviewVideo';
+import VoiceOverChange from './Components/VoiceOverChange';
+import BackgroundMusicChange from './Components/BackgroundMusicChange';
+import DownloadVideo from './Components/DownloadVideo';
 
 import './App.css';
 
@@ -20,19 +21,19 @@ function App() {
   function ChildrenLayout () {
     switch (stateStatus.status) {
       case 'upload':
-        return <VideoUploadForm />
+        return <VideoUploadForm />;
       case 'upload_new_scene':
-        return <UploadNewScene />
+        return <UploadNewScene />;
       case 'preview_video':
-        return <VideoPreview />
+        return <VideoPreview />;
       case 'voice_over_change':
-        return <VoiceOverChange />
+        return <VoiceOverChange />;
       case 'background_music_change':
-        return <BackgroundMusicChange />
+        return <BackgroundMusicChange />;
       case 'download_video':
-        return <DownloadVideo />
+        return <DownloadVideo />;
       default:
-        return <Processing/>
+        return <Processing/>;
     }
   }
 
@@ -46,10 +47,12 @@ function App() {
             path="/"
             element={
               <Products>
-                {ChildrenLayout(stateStatus)}
+                {ChildrenLayout()}
               </Products>
             }
           />
+
+          <Route path="/bill" element={<BillingPage />} /> 
         </Routes>
       </Router>
     </div>
